@@ -48,6 +48,7 @@ Route::middleware('auth:web')->group(function () {
 
 
 Route::prefix('admin')->group(function () {
+
     /* Views */
     Route::get('/login', [BackController::class, 'loginPage'])->name('admin-login');
     /* Controllers */
