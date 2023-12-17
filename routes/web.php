@@ -24,8 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* views */
-
+/* หน้าเว็บ */
 Route::get('/', [FrontController::class, 'getHome'])->name('home');
 Route::get('/facilities', [FrontController::class, 'facilitiesPage'])->name('facilities');
 Route::get('/about', [FrontController::class, 'aboutPage'])->name('about');
@@ -40,7 +39,10 @@ Route::get('/checkbooktimeout', [UserBookingController::class, 'checkBookTimeout
 Route::delete('/deletetempbook/{temp_id}', [UserBookingController::class, 'deleteTempBooking']);
 Route::post('/confirmbooking', [UserBookingController::class, 'createBookOrder']);
 
-
+/* Route test *
+Route::get('test', function () {
+    dd('test');
+});
 
 /* Route middleware users */
 Route::middleware('auth:web')->group(function () {
@@ -61,7 +63,6 @@ Route::prefix('admin')->group(function () {
             /* Controllers */
             Route::get('/', [BackController::class, 'adminPage'])->name('admin');
             Route::get('/logout', [AdminController::class, 'onLogout'])->name('logout');
-
             Route::post('/updatesite', [SettingController::class, 'onUpdateSite']);
             Route::post('/updateshutdown', [SettingController::class, 'onUpdateShutdown']);
             Route::post('/updatecontact', [SettingController::class, 'onUpdateContact']);
