@@ -39,13 +39,7 @@ Route::get('/checkbooktimeout', [UserBookingController::class, 'checkBookTimeout
 Route::delete('/deletetempbook/{temp_id}', [UserBookingController::class, 'deleteTempBooking']);
 Route::post('/confirmbooking', [UserBookingController::class, 'createBookOrder']);
 
-/* Route test */
-Route::get('test', function () {
-    if (true) {
-        dd('test2');
-        dd('test');
-    }
-});
+
 
 /* Route middleware users */
 Route::middleware('auth:web')->group(function () {
