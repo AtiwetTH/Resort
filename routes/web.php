@@ -41,8 +41,10 @@ Route::post('/confirmbooking', [UserBookingController::class, 'createBookOrder']
 
 /* Route test */
 Route::get('test', function () {
-    dd('test');
-    dd('test');
+    if (true) {
+        dd('test2');
+        dd('test');
+    }
 });
 
 /* Route middleware users */
